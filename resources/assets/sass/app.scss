@@ -1,0 +1,18 @@
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Lusitana|Montserrat:500|Raleway:600');
+@import "partials/variables";
+@import "global";
+@import "partials/icons";
+@import "partials/typography";
+@import "partials/home_page";
+@import "partials/contact";
+@import "partials/article_layout";
+
+
+
+
+
+
+
+/* 88888888888 NOTES AND CHECKS 888888888888888 */
+// pipe sass through autoprefixer to add vendor prefixes

@@ -1,0 +1,26 @@
+// font-family: 'Raleway', sans-serif;
+// font-family: 'Lusitana', serif;
+// font-family: 'Montserrat', sans-serif;
+// montserrat=400, lusitana=700, raleway=600
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Raleway',"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 600;
+}
+p, blockquote{
+  font-family: 'Lusitana',"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 400;
+}
+nav,a,span,button,label{
+  font-family: 'Montserrat',"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 500;
+}
+a{
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}

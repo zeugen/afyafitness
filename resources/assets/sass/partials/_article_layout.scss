@@ -1,0 +1,124 @@
+.content-wrapper{
+  margin-top: 120px;
+}
+.article-body{
+  padding: 1em;
+  background-color: $text-bg;
+  border: 1px solid $gray-lighter;
+
+}
+//header > category row
+.article-body  header  .category{
+  padding-bottom: 0.85em;
+
+  a{
+    font-size: 1.065em;
+    color: $hrule;
+  }
+  a:hover{
+    text-decoration: none;
+    color: $green;
+
+  }
+}
+//header > avatar row
+.article-body  header  .contributor{
+  .avatar,.avatar-name{
+    display: inline-block;
+    vertical-align: middle;
+
+  }
+
+}
+.avatar{
+  width: 3.5em;
+  height: 3.5em;
+  max-width: 100%;
+  max-height: 100%;
+}
+.avatar-name h2 {
+  color: #696969;
+  font-weight: 400;
+  font-size: 0.935em;
+  padding-left: 0.5em;
+  a{
+    color: $brand-success;
+  }
+}
+.avatar-name p.upload-date{
+  font-size: 0.75em;
+  color: $hrule;
+  padding-top: 0.5em;
+  padding-left: 0.5em;
+}
+//article title
+.article-body  header  .title{
+  padding: 0.85em 0 0.97em 0;
+  h1{
+    font-size:2em;
+  }
+}
+//article-thumb
+
+
+@media(min-width:768px){
+  .article-thumb img{
+    max-width: 100%;
+    height: 400px;
+  }
+}
+//readmore
+.article-body  header .article-read-more {
+padding: 0.65em 0 1em 0;
+a{
+  font-size: 1em;
+  color: $hrule;
+}
+a:hover{
+  text-decoration: none;
+  color: $green;
+
+}
+}
+// article footer
+.article-body  header footer{
+  padding:0.65em 0;
+
+  span{
+    display: inline-block;
+    vertical-align: middle;
+    a{
+      color: $blue;
+      font-size: 0.85em;
+      letter-spacing: 0.05em;
+
+    }
+    a:hover{
+      text-decoration: none;
+      color: $green;
+
+    }
+  }
+   .responses{
+    a{
+      margin-left: 0.71em;
+    }
+  }
+
+}
+
+// this code will only affect the main home page intro-message only
+.h-intro-message {
+    position: relative;
+    padding-top: 20%;
+    /*padding-bottom: 20%;*/
+}
+
+.h-intro-message > h1 {
+    margin: 0;
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+    font-size: 4.85em;
+}
+.h-intro-message> div:nth-of-type(1){
+  padding-top: 2.35em;
+}
