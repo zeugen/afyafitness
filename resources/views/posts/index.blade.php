@@ -4,11 +4,11 @@
   <div class="container top-margin">
     <div class="row">
       <div class="col-md-8">
-        <h1>All Posts</h1>
+        <h1>All Articles</h1>
 
       </div>
       <div class="col-md-4">
-        <a href="{{route('posts.create')}}" class="btn btn-primary btn-block btn-lg crud-btn">Create New Post </a>
+        <a href="{{route('posts.create')}}" class="btn btn-primary btn-block btn-lg crud-btn">Create an Article </a>
       </div>
       <div class="col-md-12">
         <hr>
@@ -38,6 +38,10 @@
             @endforeach
           </tbody>
         </table>
+        {{-- pagination links/controls --}}
+        <div class="text-center">
+          {!! $posts->links(); !!}
+        </div>
       </div>
     </div>
   </div>

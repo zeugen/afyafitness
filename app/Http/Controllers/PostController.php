@@ -21,7 +21,7 @@ class PostController extends Controller
     {
         //1)create a var and store all blogposts from the Database
         // 2)Return a view and pass in the above variable
-        $posts = Post::all(); //again we are using eloquents all to grab all posts from the Database
+        $posts = Post::orderBy('id', 'desc')->paginate(7); //again we are using eloquents all to grab all posts from the Database
 
         return view('posts.index')->withPosts($posts);
     }
@@ -50,7 +50,9 @@ class PostController extends Controller
         $this-> validate($request,array(
           //rules we want to validate against
             'title'=> 'required|max:255',
+            'slug' => 'required|alpha_dash|min:5|max:255|unique:posts,slug',
             'body' => 'required'
+
         ));
         //if there is an error a message will be sent back to the create view
         //store to db
@@ -58,6 +60,7 @@ class PostController extends Controller
         $post = new Post;
 
         $post->title = $request->title;
+        $post->slug = $request->slug;
         $post->body = $request->body;
 
         //save the object with save method
@@ -111,15 +114,29 @@ class PostController extends Controller
     public function update(Request $request, $id)
     {
         //validate data before we use it
-        $this->validate($request, array(
-          //rules we want to validate against
-            'title'=> 'required|max:255',
-            'body' => 'required'
-        ));
+        $post= Post::find($id);
+        if ($request->input('slug') == $post->slug) {
+          # code...
+          $this->validate($request, array(
+            //rules we want to validate against
+              'title'=> 'required|max:255',
+              'body' => 'required'
+          ));
+        }else {
+          # code...
+          $this->validate($request, array(
+            //rules we want to validate against
+              'title'=> 'required|max:255',
+              'slug'=> 'required|alpha_dash|min:5|max:255|unique:posts,slug',
+              'body' => 'required'
+          ));
+        }
+
         //save data to db
         $post = Post::find($id);
         //match fields to those in the Database
         $post->title =$request->input('title');
+        $post->slug =$request->input('slug');
         $post->body= $request->input('body');
         $post->save();
         //request contains all data passed from form during the post request

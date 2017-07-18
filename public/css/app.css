@@ -5747,6 +5747,7 @@ button.close {
   margin-top: 80px; }
 
 .btn-submit {
+  margin-top: 1em;
   font-family: 'Montserrat',"Helvetica Neue",Helvetica,Arial,sans-serif;
   font-weight: 500;
   font-size: 0.94em;

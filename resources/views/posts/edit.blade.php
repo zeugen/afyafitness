@@ -10,6 +10,10 @@
           {{Form::label('title', 'Title:')}}
           {{Form::text('title',null,['class'=>'form-control input-lg'])}}
         </div>
+        <div class="form-group">
+          {{Form::label('slug','Slug:')}}
+          {{Form::text('slug', null, array('class'=>'form-control input-lg'))}}
+        </div>
 
         <br>
         <div class="form-group">

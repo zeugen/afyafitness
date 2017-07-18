@@ -1,6 +1,6 @@
 <?php
  namespace App\Http\Controllers;
-
+ use App\Post;
  class PagesController extends Controller {
    public function getIndex(){
     # process variable or params
@@ -8,7 +8,8 @@
     # recieve data back from the model
     #process data received from the model
     #pass data to the correct view
-    return view ('pages.welcome');
+    $posts = Post::orderBy('created_at', 'desc')->limit(3)->get();
+    return view ('pages.welcome')->withPosts($posts);
 
    }
    public function getAbout(){

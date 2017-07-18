@@ -12,13 +12,17 @@
         </div>
         <div class="col-md-4">
           <div class="well">
+            <dl class="dl-horizontal">
+              <label>URL :</label>
+              <p><a href="{{url('article/'.$post->slug) }}">{{url('article/'.$post->slug)}}</a></p>   {{--   append base url to the post slug --}}
+            </dl>
              <dl class="dl-horizontal">
-               <dt>Created At:</dt>
-               <dd>{{date('M j, Y h:ia ',strtotime($post->created_at)) }}</dd>
+               <label>Created At:</label>
+               <p>{{date('M j, Y h:ia ',strtotime($post->created_at)) }}</p>
              </dl>
              <dl class="dl-horizontal">
-               <dt>Last Updated:</dt>
-               <dd>{{date('M j, Y h:ia',strtotime($post->updated_at))}}</dd>
+               <label>Last Updated:</label>
+               <p>{{date('M j, Y h:ia',strtotime($post->updated_at))}}</p>
              </dl>
              <hr>
              <div class="row">
@@ -31,6 +35,11 @@
                  {!! Form::submit('Delete', ['class'=>'btn btn btn-block btn-danger'])!!}
 
                  {!! Form:: close()!!}
+               </div>
+             </div>
+             <div class="row">
+               <div class="col-md-12">
+                 {{Html::linkRoute('posts.index','<< See All Articles', [], ['class'=> ' btn btn-default btn-block btn-submit'])}}
                </div>
              </div>
 

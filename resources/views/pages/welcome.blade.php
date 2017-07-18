@@ -43,6 +43,8 @@
           <div class="row">
             <!-- main content -->
             <main class="col-md-8">
+              @foreach($posts as $post)
+
               <div class="row article-body">
                 <section class="col-sm-12 col-md-12">
                   <header>
@@ -63,13 +65,16 @@
                         </div>
                       </div>
                       <!-- Article title -->
-                      <div class="title"><h1>Getting back on track with Intuitive Eating.</h1></div>
+                      <div class="title"><h1>{{$post->title}}</h1></div>
                       <!-- article thumbnail -->
                       <article class="article-thumb"> <img src="{{asset('img/smoothies.jpg')}}" alt="intuitive eating" class="img-responsive">
 
                       </article>
                       <!-- article readmore -->
-                      <div class="article-read-more "><a href="" >Read more ...</a></div>
+                      <div class="article-read-more ">
+                        <p>{{substr($post->body, 0 , 200)}}{{strlen($post->body)>200 ? " ..." : ""}}</p>
+
+                        <a href="{{ url('article/'.$post->slug) }}" >Read more ...</a></div>
                       <!-- article footer -->
                       <footer class="article-footer">
                         <span class="likes">
@@ -91,102 +96,8 @@
 
                 </section>
               </div>
-              <div class="row article-body">
-                <section class="col-sm-12 col-md-12">
-                  <header>
-                    <!-- category marker and link -->
-                    <div class="category"><a href="#">
+              @endforeach
 
-                      <span>
-                        <i class="fa fa-tag" aria-hidden="true"></i>
-                        Nutrition
-                        </span></a>
-                      </div>
-                      <!-- contributor avatar,name, subtag,date of upload -->
-                      <div class="contributor">
-                        <img src="images/roger.jpg" alt="" class="avatar img-responsive img-circle">
-                        <div class="avatar-name">
-                          <h2>In <a href="">Recipes</a> by <a href="">Rogers Momanyi</a></h2>
-                          <p class="upload-date">May 17.</p>
-                        </div>
-                      </div>
-                      <!-- Article title -->
-                      <div class="title"><h1>Getting back on track with Intuitive Eating.</h1></div>
-                      <!-- article thumbnail -->
-                      <article class="article-thumb"> <img src="{{asset('img/smoothies.jpg')}}" alt="intuitive eating" class="img-responsive">
-
-                      </article>
-                      <!-- article readmore -->
-                      <div class="article-read-more "><a href="" >Read more ...</a></div>
-                      <!-- article footer -->
-                      <footer class="article-footer">
-                        <span class="likes">
-                          <a href="" >
-                            <i class="fa fa-heart-o" aria-hidden="true"></i>
-                            400
-                          </a>
-
-                        </span>
-                        <span class="responses pull-right">
-                          <a href="" >23 responses </a>
-                          <a href="" class="bookmark"><i class="fa fa-bookmark-o" aria-hidden="true"></i></a>
-                          <a href="" class="share"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
-                        </span>
-                      </footer>
-
-
-                  </header>
-
-                </section>
-              </div>
-              <div class="row article-body">
-                <section class="col-sm-12 col-md-12">
-                  <header>
-                    <!-- category marker and link -->
-                    <div class="category"><a href="#">
-
-                      <span>
-                        <i class="fa fa-tag" aria-hidden="true"></i>
-                        Nutrition
-                        </span></a>
-                      </div>
-                      <!-- contributor avatar,name, subtag,date of upload -->
-                      <div class="contributor">
-                        <img src="images/roger.jpg" alt="" class="avatar img-responsive img-circle">
-                        <div class="avatar-name">
-                          <h2>In <a href="">Recipes</a> by <a href="">Rogers Momanyi</a></h2>
-                          <p class="upload-date">May 17.</p>
-                        </div>
-                      </div>
-                      <!-- Article title -->
-                      <div class="title"><h1>Getting back on track with Intuitive Eating.</h1></div>
-                      <!-- article thumbnail -->
-                      <article class="article-thumb"> <img src="{{asset('img/smoothies.jpg')}}" alt="intuitive eating" class="img-responsive">
-
-                      </article>
-                      <!-- article readmore -->
-                      <div class="article-read-more "><a href="" >Read more ...</a></div>
-                      <!-- article footer -->
-                      <footer class="article-footer">
-                        <span class="likes">
-                          <a href="" >
-                            <i class="fa fa-heart-o" aria-hidden="true"></i>
-                            400
-                          </a>
-
-                        </span>
-                        <span class="responses pull-right">
-                          <a href="" >23 responses </a>
-                          <a href="" class="bookmark"><i class="fa fa-bookmark-o" aria-hidden="true"></i></a>
-                          <a href="" class="share"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
-                        </span>
-                      </footer>
-
-
-                  </header>
-
-                </section>
-              </div>
             </main>
             <!-- sidebar -->
             <aside class="col-md-4">
