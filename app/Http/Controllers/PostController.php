@@ -12,6 +12,10 @@ use Session;
 
 class PostController extends Controller
 {
+    // create a construct for the middleware that locks not logged in people from viewing the posts controller and its assoc routes
+    public function __construct(){
+      $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *

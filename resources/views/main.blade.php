@@ -12,6 +12,7 @@
 
   <main class="main-body-content ">
     @include('partials._messages')
+    
     @yield('body-content')
   </main>
 

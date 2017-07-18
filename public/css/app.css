@@ -5737,6 +5737,10 @@ button.close {
 .main-body-content {
   margin-top: 50px; }
 
+a.log-status {
+  font-size: 0.65em;
+  letter-spacing: 0.01em; }
+
 .page-footer > .navbar {
   margin-bottom: 0; }
 
@@ -5771,7 +5775,8 @@ h6 {
 
 p, blockquote {
   font-family: 'Lusitana',"Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-weight: 400; }
+  font-weight: 400;
+  font-size: 1.25em; }
 
 nav, a, span, button, label {
   font-family: 'Montserrat',"Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -5829,7 +5834,8 @@ html, body {
 
 .article-body {
   padding: 1em;
-  background-color: #ffffff;
+  margin: 2em 0;
+  background-color: #f8f8f8;
   border: 1px solid #eeeeee; }
 
 .article-body header .category {

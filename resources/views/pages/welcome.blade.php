@@ -23,9 +23,7 @@
                 <h1>Welcome to AfyaFitness</h1>
                 <p>Thank you so much for visiting</p>
                 <p> We help people everywhere look good, feel good, do good in order to live more fulfilling lives every day.</p>
-                <p>
-                  <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">Popular Post &raquo;</a>
-                </p>
+                <hr>
               </div>
               <div class="col-md-4 col-md-offset-1">
                 <img src="{{asset('img/icons/logo2.png')}}" alt="afyafitness logo" class="img-responsive">
@@ -58,24 +56,26 @@
                       </div>
                       <!-- contributor avatar,name, subtag,date of upload -->
                       <div class="contributor">
-                        <img src="images/roger.jpg" alt="" class="avatar img-responsive img-circle">
+                        <img src="{{asset('img/roger.jpg')}}" alt="" class="avatar img-responsive img-circle">
                         <div class="avatar-name">
-                          <h2>In <a href="">Recipes</a> by <a href="">Rogers Momanyi</a></h2>
+                          <h2>In <a href="">Recipes</a> by <a href="#">Rogers Momanyi</a></h2>
                           <p class="upload-date">May 17.</p>
                         </div>
                       </div>
+
                       <!-- Article title -->
-                      <div class="title"><h1>{{$post->title}}</h1></div>
+                      <div class="title"><h1>{{$post->title}}</h1><hr></div>
                       <!-- article thumbnail -->
                       <article class="article-thumb"> <img src="{{asset('img/smoothies.jpg')}}" alt="intuitive eating" class="img-responsive">
 
                       </article>
                       <!-- article readmore -->
                       <div class="article-read-more ">
-                        <p>{{substr($post->body, 0 , 200)}}{{strlen($post->body)>200 ? " ..." : ""}}</p>
-
+                        <hr>
+                        <p class="">{{substr($post->body, 0 , 200)}}{{strlen($post->body)>200 ? " ..." : ""}}</p>
+                        <hr>
                         <a href="{{ url('article/'.$post->slug) }}" >Read more ...</a></div>
-                      <!-- article footer -->
+                      {{-- <!-- article footer -->
                       <footer class="article-footer">
                         <span class="likes">
                           <a href="" >
@@ -89,7 +89,7 @@
                           <a href="" class="bookmark"><i class="fa fa-bookmark-o" aria-hidden="true"></i></a>
                           <a href="" class="share"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
                         </span>
-                      </footer>
+                      </footer> --}}
 
 
                   </header>
