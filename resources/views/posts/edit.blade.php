@@ -14,6 +14,10 @@
           {{Form::label('slug','Slug:')}}
           {{Form::text('slug', null, array('class'=>'form-control input-lg'))}}
         </div>
+        <div class="form-group">
+          {{Form::label('category_id', 'Category: ')}}
+          {{Form::select('category_id', $categories, null, ['class'=> 'form-control'])}}
+        </div>
 
         <br>
         <div class="form-group">

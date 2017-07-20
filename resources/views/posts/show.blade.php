@@ -16,6 +16,10 @@
               <label>URL :</label>
               <p><a href="{{url('article/'.$post->slug) }}">{{url('article/'.$post->slug)}}</a></p>   {{--   append base url to the post slug --}}
             </dl>
+            <dl class="dl-horizontal">
+              <label>Category :</label>
+              <p>{{$post->category->name }}</p>   {{--   append base url to the post slug --}}
+            </dl>
              <dl class="dl-horizontal">
                <label>Created At:</label>
                <p>{{date('M j, Y h:ia ',strtotime($post->created_at)) }}</p>
@@ -27,12 +31,12 @@
              <hr>
              <div class="row">
                <div class="col-sm-6">
-                 {!! Html::linkRoute('posts.edit', 'Edit', array($post->id), array('class' => 'btn btn btn-block btn-primary'))!!}
+                 {!! Html::linkRoute('posts.edit', 'Edit', array($post->id), array('class' => 'btn btn btn-block btn-primary btn-submit'))!!}
 
                </div>
                <div class="col-sm-6">
                  {!! Form::open(['route'=>['posts.destroy', $post->id], 'method'=>'DELETE'])!!}
-                 {!! Form::submit('Delete', ['class'=>'btn btn btn-block btn-danger'])!!}
+                 {!! Form::submit('Delete', ['class'=>'btn btn btn-block btn-danger btn-submit'])!!}
 
                  {!! Form:: close()!!}
                </div>

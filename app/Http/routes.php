@@ -23,8 +23,15 @@ Route::get('password/reset/{token?}', 'Auth\PasswordController@showResetForm');/
 Route::post('password/email', 'Auth\PasswordController@sendResetLinkEmail');//this will will trigger the email
 Route::post('password/reset', 'Auth\PasswordController@reset');
 
+//Categories
+Route:: resource('categories', 'CategoryController',['except'=>['create']]);
+
+//Comments
+Route::post('comments/{post_id}', ['uses'=>'CommentsController@store', 'as'=> 'comments.store']);
+
 Route::get('article/{slug}',['as'=>'article.single','uses'=>'ArticleController@getSingle'])->where('slug','[\w\d\-\_]+');//blogcontrolleruread ..uses where you send it
-Route::get('contact', 'PagesController@getContact');
+Route::get('contact', 'PagesController@getContact'); //display our contact page and send info via post to our PagesController
+Route::post('contact', 'PagesController@postContact');
 Route::get('article',['uses'=>'ArticleController@getIndex', 'as'=>'article.index']);//show all blogposts
 Route::get('about', 'PagesController@getAbout');
 Route::get('/', 'PagesController@getIndex');
