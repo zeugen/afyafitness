@@ -17,29 +17,31 @@
             </div>
             <div class="contact-section">
             <div class="container">
-              <form>
+              <form action="{{url('contact')}}" method="POST">
+                {{csrf_field()}}
                 <div class="col-md-6 form-line">
                     <div class="form-group">
-                      <label for="exampleInputUsername">Your name</label>
-                      <input type="text" class="form-control" id="" placeholder=" Enter Name">
+                      <label for="name">Your name</label>
+                      <input type="text" class="form-control" name="name" placeholder=" Enter Name">
                     </div>
                     <div class="form-group">
-                      <label for="exampleInputEmail">Email Address</label>
-                      <input type="email" class="form-control" id="exampleInputEmail" placeholder=" Enter Email id">
+                      <label for="subject">Email Subject</label>
+                      <input type="text" class="form-control" name="subject" placeholder=" Subject">
                     </div>
                     <div class="form-group">
-                      <label for="telephone">Mobile No.</label>
-                      <input type="tel" class="form-control" id="telephone" placeholder=" Enter 10-digit mobile no.">
+                      <label for="email">Email Address</label>
+                      <input type="email" class="form-control" name="email" placeholder=" Enter Email id">
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="form-group">
-                      <label for ="description"> Message</label>
-                      <textarea  class="form-control" id="description" placeholder="Enter Your Message"></textarea>
+                      <label for ="message"> Message</label>
+                      <textarea  class="form-control" name="message" placeholder="Enter Your Message"></textarea>
                     </div>
                     <div>
 
-                      <button type="button" class="btn btn-default submit"><i class="fa fa-paper-plane" aria-hidden="true"></i>  Send Message</button>
+                      <input type="submit" value="Send Message" class="btn btn-success ">
+
                     </div>
 
                 </div>
