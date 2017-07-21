@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     @include('partials._head')
+    
   </head>
 
 
@@ -12,7 +13,7 @@
 
   <main class="main-body-content ">
     @include('partials._messages')
-    
+
     @yield('body-content')
   </main>
 

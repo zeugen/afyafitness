@@ -8,11 +8,12 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
+
     <title> AfyaFitness @yield('title') </title>  <!-- change this title for each page -->
     <link rel="stylesheet" href="{{ asset('css/animate.css') }}"> <!-- CSS app -->
     <link rel="stylesheet" href="{{asset('css/parsley.css')}}"><!-- parsley css validator -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}"> <!-- CSS app -->
-
+    @yield('stylesheets')
 
 
 

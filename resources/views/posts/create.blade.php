@@ -1,5 +1,6 @@
 @extends('main')
 @section('title','| create new post')
+
 @section('body-content')
   <div class="container top-margin">
     <div class="row">
@@ -31,4 +32,15 @@
       </div>
     </div>
   </div>
+@endsection
+@section('scripts')
+  <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+  <script>
+    tinymce.init({ selector:'textarea',
+                  plugins: 'link',
+                  menubar: false,
+                  plugins: "textcolor colorpicker"
+
+     });
+   </script>
 @endsection

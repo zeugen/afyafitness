@@ -8,7 +8,7 @@
         <div class="col-md-8">
           <h1>{{$post-> title}}</h1>
           <br>
-          <p>{{$post-> body}}</p>
+          <p>{!! $post-> body !!}</p> {{--takes all html chars $ converts them to unexecutable content --}}
         </div>
         <div class="col-md-4">
           <div class="well">

@@ -72,7 +72,7 @@
                       <!-- article readmore -->
                       <div class="article-read-more ">
                         <hr>
-                        <p class="">{{substr($post->body, 0 , 200)}}{{strlen($post->body)>200 ? " ..." : ""}}</p>
+                        <p class="">{{substr(strip_tags($post->body), 0 , 200)}}{{strlen(strip_tags($post->body))>200 ? " ..." : ""}}</p>
                         <hr>
                         <a href="{{ url('article/'.$post->slug) }}" >Read more ...</a></div>
                       {{-- <!-- article footer -->
