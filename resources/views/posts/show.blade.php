@@ -7,6 +7,7 @@
       <div class="row">
         <div class="col-md-8">
           <h1>{{$post-> title}}</h1>
+          <img src="{{asset('images/'. $post->image)}}" alt="" class="img-responsive">
           <br>
           <p>{!! $post-> body !!}</p> {{--takes all html chars $ converts them to unexecutable content --}}
         </div>

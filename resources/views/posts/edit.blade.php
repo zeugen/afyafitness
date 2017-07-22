@@ -4,7 +4,7 @@
   <div class="container top-margin">
     <div class="row">
       {{-- start form - this will tryto connect a form to the model object as picked from the db thus changes made on the form can be replicated on the db --}}
-      {!! Form::model($post, ['route'=> ['posts.update', $post->id], 'method' => 'PUT']) !!}
+      {!! Form::model($post, ['route'=> ['posts.update', $post->id],'files'=>true, 'method' => 'PUT']) !!}
       <div class="col-md-8">
         <div class="form-group">
           {{Form::label('title', 'Title:')}}
@@ -17,6 +17,10 @@
         <div class="form-group">
           {{Form::label('category_id', 'Category: ')}}
           {{Form::select('category_id', $categories, null, ['class'=> 'form-control'])}}
+        </div>
+        <div class="form-group">
+          {{Form::label('featured_image'), 'Update Featured Image'}}
+          {{Form::file('featured_image')}}
         </div>
 
         <br>

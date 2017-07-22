@@ -10,6 +10,9 @@ use App\Post;
 use App\Category; //allows us to link to category in providers folder
 
 use Session;
+use Purifier;
+use Image;
+use Storage;
 
 class PostController extends Controller
 {
@@ -59,7 +62,8 @@ class PostController extends Controller
             'title'=> 'required|max:255',
             'slug' => 'required|alpha_dash|min:5|max:255|unique:posts,slug',
             'category_id' =>'required|integer',
-            'body' => 'required'
+            'body' => 'required',
+            'featured_image'=> 'sometimes|image'
 
         ));
         //if there is an error a message will be sent back to the create view
@@ -70,7 +74,17 @@ class PostController extends Controller
         $post->title = $request->title;
         $post->slug = $request->slug;
         $post->category_id = $request->category_id;
-        $post->body = $request->body;
+        $post->body = Purifier::clean($request->body, 'youtube');
+        //save the Featured image
+        if ($request->hasFile('featured_image')) {
+          # code...
+          $image= $request->file('featured_image');
+          $filename =time().'.'.$image->getClientOriginalExtension(); //rename to unique the file upladed using timestamps
+          $location = public_path('images/' .$filename);
+          Image::make($image)->resize(500,300)->save($location);
+
+          $post->image = $filename;
+        }
 
         //save the object with save method
 
@@ -133,24 +147,17 @@ class PostController extends Controller
     {
         //validate data before we use it
         $post= Post::find($id);
-        if ($request->input('slug') == $post->slug) {
+
           # code...
           $this->validate($request, array(
             //rules we want to validate against
               'title'=> 'required|max:255',
+              'slug'=> "required|alpha_dash|min:5|max:255|unique:posts,slug,$id",
               'category_id'=> 'required|integer',
-              'body' => 'required'
+              'body' => 'required',
+              'featured_image' => 'image'
           ));
-        }else {
-          # code...
-          $this->validate($request, array(
-            //rules we want to validate against
-              'title'=> 'required|max:255',
-              'slug'=> 'required|alpha_dash|min:5|max:255|unique:posts,slug',
-              'category_id'=> 'required|integer',
-              'body' => 'required'
-          ));
-        }
+
 
         //save data to db
         $post = Post::find($id);
@@ -158,7 +165,22 @@ class PostController extends Controller
         $post->title =$request->input('title');
         $post->slug =$request->input('slug');
         $post->category_id = $request->input('category_id');
-        $post->body= $request->input('body');
+        $post->body= Purifier::clean($request->input('body'));
+        //check to see if someone has added a photo
+        if($request->hasFile('featured_image')){
+          //add the new photo
+          $image= $request->file('featured_image');
+          $filename =time().'.'.$image->getClientOriginalExtension(); //rename to unique the file upladed using timestamps
+          $location = public_path('images/' .$filename);
+          Image::make($image)->resize(500,300)->save($location);
+
+          $oldFileName =$post->image;
+          //update dnb with new file name
+          $post->image = $filename;
+          //delete the old photo
+          Storage::delete($oldFileName);
+        }
+
         $post->save();
         //request contains all data passed from form during the post request
         //set flash data with success message
@@ -178,6 +200,7 @@ class PostController extends Controller
         //Remember to setup a form aroudn delete method to make it send as a delete button on view
         //find item that we are going to delete
         $post =Post::find($id);
+        Storage::delete($post->image);
         $post->delete();
 
         //after delete redirect to the following view
