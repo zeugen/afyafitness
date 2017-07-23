@@ -1,0 +1,31 @@
+.table> thead{
+  text-transform: uppercase;
+  font-size: 1em;
+  letter-spacing: 0.21em;
+  color: $brown;
+}
+.table>tbody{
+  font-family: 'Lusitana',"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 400;
+  font-size: 1.25em;
+}
+.table>tbody>tr>th{
+  font-family: 'Montserrat',"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 500;
+
+}
+a>span>i:hover,
+a>span>i:focus{
+  color:$brand-primary;
+
+}
+.form-group >label , label {
+  color: $brown;
+}
+.form-group >a:hover,
+.form-group >a:focus{
+  color: $brand-primary;
+}
+.dl-horizontal >p>a{
+  font-size: .56em;
+}

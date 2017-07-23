@@ -1,0 +1,122 @@
+#about-page{
+  background:
+/* top, transparent red, faked with gradient */
+linear-gradient(
+  rgba(29, 31, 57, 0.75),
+  rgba(29, 31, 57, 0.70)
+),
+/* bottom, image */
+url(../img/aboutbg1e.jpg);
+  background-size: cover;
+}
+.page-header {
+  background-color: #777777;
+  background: no-repeat center center;
+  background-attachment: scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  margin-bottom: 50px;
+}
+.page-header .site-heading,
+.page-header .post-heading,
+.page-header .page-heading {
+  padding: 100px 0 50px;
+  color: white;
+}
+@media only screen and (min-width: 768px) {
+  .page-header .site-heading,
+  .page-header .post-heading,
+  .page-header .page-heading {
+    padding: 150px 0;
+  }
+}
+.page-header .site-heading,
+.page-header .page-heading {
+  text-align: center;
+}
+.page-header .site-heading h1,
+.page-header .page-heading h1 {
+  margin-top: 70px;
+  font-size: 50px;
+}
+.page-header .site-heading .subheading,
+.page-header .page-heading .subheading {
+  font-size: 24px;
+  line-height: 1.1;
+  display: block;
+  font-family: 'Raleway',"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 300;
+  margin: 10px 0 0;
+}
+@media only screen and (min-width: 768px) {
+  .page-header .site-heading h1,
+  .page-header .page-heading h1 {
+    font-size: 80px;
+  }
+}
+.page-header .post-heading h1 {
+  font-size: 35px;
+}
+.page-header .post-heading .subheading,
+.page-header .post-heading .meta {
+  line-height: 1.1;
+  display: block;
+}
+.page-header .post-heading .subheading {
+  font-family: 'Raleway',"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 24px;
+  margin: 10px 0 30px;
+  font-weight: 600;
+}
+.page-header .post-heading .meta {
+  font-family: 'Montserrat',"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 20px;
+}
+.page-header .post-heading .meta a {
+  color: white;
+}
+@media only screen and (min-width: 768px) {
+  .page-header .post-heading h1 {
+    font-size: 55px;
+  }
+  .page-header .post-heading .subheading {
+    font-size: 30px;
+  }
+}
+
+//team
+#team {
+  background-color: $brand-primary;
+  color: $text-bg;
+}
+@media only screen and (min-width: 768px) {
+  section#team{
+    min-width: 100%;
+    min-height: 80vh;
+    padding: 50px 0 50px 0;
+  }
+}
+.team-member {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.team-member img {
+  margin: 0 auto;
+  border: 7px solid white;
+}
+.team-member h4 {
+  margin-top: 25px;
+  margin-bottom: 0;
+  text-transform: none;
+}
+.team-member p {
+  margin-top: 0;
+}
+img.profile-thumbs{
+  max-width: 250px;
+  max-height: 250px;
+}
