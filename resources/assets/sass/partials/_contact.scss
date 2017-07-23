@@ -1,3 +1,14 @@
 #contact{
   margin-top: 70px;
 }
+#contact-page{
+  background:
+/* top, transparent red, faked with gradient */
+linear-gradient(
+  rgba(29, 31, 57, 0.75),
+  rgba(29, 31, 57, 0.70)
+),
+/* bottom, image */
+url(../img/contactus1.jpg);
+  background-size: cover;
+}

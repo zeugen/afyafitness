@@ -15,7 +15,7 @@
     # recieve data back from the model
     #process data received from the model
     #pass data to the correct view
-    $posts = Post::orderBy('created_at', 'desc')->limit(3)->get();
+    $posts = Post::orderBy('created_at', 'desc')->limit(6)->get();
     return view ('pages.welcome')->withPosts($posts);
 
    }

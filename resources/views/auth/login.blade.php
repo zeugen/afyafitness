@@ -5,8 +5,8 @@
     <div class="container ">
       <div class="row main-body-content">
         <div class="col-md-6 col-md-offset-3">
-          <h1 class="">Login</h1>
-          <hr>
+          <h1 class="text-center">Login</h1>
+          <hr class="divider-sm">
         </div>
       </div>
       <div class="row ">

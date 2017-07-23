@@ -10,6 +10,7 @@
 
 
     <title> AfyaFitness @yield('title') </title>  <!-- change this title for each page -->
+    <link rel="stylesheet" href="{{ asset('font-awesome/css/font-awesome.min.css') }}"> <!-- CSS app -->
     <link rel="stylesheet" href="{{ asset('css/animate.css') }}"> <!-- CSS app -->
     <link rel="stylesheet" href="{{asset('css/parsley.css')}}"><!-- parsley css validator -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}"> <!-- CSS app -->

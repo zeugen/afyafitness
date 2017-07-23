@@ -6,12 +6,31 @@
   margin-top: 50px;
   margin-bottom: 70px;
 }
+.page-heading{
+  h1{
+    margin: 0;
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+    font-size: 4.2em;
+  }
+}
 a.log-status{
   font-size: 0.65em;
   letter-spacing: 0.01em;
 }
 .page-footer > .navbar {
   margin-top: 5px;
+  margin-bottom: 0;
+}
+footer {
+  padding: 50px 0 65px;
+}
+footer .list-inline {
+  margin: 0;
+  padding: 0;
+}
+footer .copyright {
+  font-size: 14px;
+  text-align: center;
   margin-bottom: 0;
 }
 
@@ -29,4 +48,25 @@ a.log-status{
   font-size: 0.94em;
   letter-spacing: 0.156em;
   text-transform: uppercase;
+}
+  i, i.text-primary,
+  .form-group >a  {
+  color: $brand-success;
+  -webkit-transition: all 0.35s;
+  -moz-transition: all 0.35s;
+  transition: all 0.35s;
+}
+a>span>i:hover,
+a>span>i:focus{
+  color:$brand-primary;
+
+}
+.form-group >label {
+  color: $brown;
+}
+.form-group >a:hover,
+.form-group >a:focus{
+  color: $brand-primary;
+
+
 }

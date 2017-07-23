@@ -5,8 +5,8 @@
   <div class="container top-margin">
     <div class="row">
       <div class="col-md-8 col-md-offset-2">
-        <h2>Create new article</h2>
-        <hr class="intro-divider">
+        <h1 class="text-center">Create New Article</h1>
+        <hr class="divider-sm">
         {!! Form::open(['route' => 'posts.store', 'data-parsley-validate' => '', 'files'=>true ]) !!}
             {{Form::label('title','Title:')}}
             {{Form::text('title',null, array('class' => 'form-control','required' => '', 'maxlength' => '255'))}}
